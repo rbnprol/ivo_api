@@ -1,0 +1,22 @@
+<doctrine-mapping>
+
+    <entity name="App\Product\Domain\Product" table="ivo_product">
+        <id name="id" column="id" type="string" nullable="false"/>
+
+
+        <field name="name" column="name" type="string" length="255" nullable="false"/>
+
+        <field name="isActive" column="is_active" type="boolean">
+            <options>
+                <option name="default">true</option>
+            </options>
+        </field>
+
+
+        <many-to-one field="place" target-entity="App\Place\Domain\Place">
+            <join-column name="place_id" referenced-column-name="id" />
+        </many-to-one>
+
+    </entity>
+
+</doctrine-mapping>

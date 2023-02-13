@@ -1,0 +1,23 @@
+<doctrine-mapping>
+
+    <entity name="App\Place\Domain\Place" table="ivo_place">
+
+        <id name="id" column="id" type="string" nullable="false"/>
+
+        <field name="name" column="name" type="string" length="255" nullable="false"/>
+
+        <field name="isActive" column="is_active" type="boolean">
+            <options>
+                <option name="default">true</option>
+            </options>
+        </field>
+
+        <field name="createdAt" column="created_at" type="datetime">
+            <options>
+                <option name="default">CURRENT_TIMESTAMP</option>
+            </options>
+        </field>
+
+    </entity>
+
+</doctrine-mapping>
